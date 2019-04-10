@@ -1,0 +1,10 @@
+install.packages("tm")
+require("tm")
+my.corpus<-Corpus(DirSource("C:/Users/Raju/Downloads/doc"))
+getTransformations
+my.corpus<-tm_map(my.corpus,removePunctuation)
+my.corpus<-tm_map(my.corpus,removeWords,stopwords("english"))
+save.image(file="work.RData")
+View(my.corpus)
+work=load("C:/Users/Raju/Documents/work.RData")
+head(work)
